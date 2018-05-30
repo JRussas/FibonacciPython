@@ -22,6 +22,12 @@ Assumptions:
     e. Get with an id retrieves a particular record
 4. Database backups would be handled as part of the postgres administration
 
+Maintenance/LongTerm Changes:
+1.  Move request processing to a separate process that monitors requests and determines number sequences outside of the REST request.
+    a. State management added to datamodel
+2. Containerize the image in docker so that it can be esaily redeployed as necessary.
+3. Add library that uses inline documentation to generate documentation for REST interface
+4. Build out configuration settings based on deployment type and utilized virtual environment further
 
 Potential issues:
 1. Processing for a large range could take longer than the request timeout
