@@ -1,0 +1,26 @@
+Web Service Entry Points:
+
+DELETE:
+<serverpath>/FibNumberReqs/<int:id>
+id: id of the record to DELETE
+return: 200 on success
+
+POST:
+<serverpath>/FibNumberReqs/<int:number>
+number: number of sequence values to generate and list
+return:FibonacciNumbersRequest data model and 201 on success
+
+PUT: (NA)
+<serverpath>/FibNumberReqs/<int:id>
+id: the id of the record to edit
+return:  returns 405 as edit isn't being supported
+
+GET All:
+<serverpath>/FibNumberReqs
+no params
+return: returns a list of the request records and 200 on success
+
+GET ID:
+<serverpath>/FibNumberReqs?id=id_value
+id of the record to retrieve.  Should probably be <serverpath>/FibNumberReqs/<int:id> to stay consistent
+return: FibonacciNumbersRequest data model and 200 on success
