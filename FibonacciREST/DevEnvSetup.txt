@@ -31,16 +31,29 @@ Deployment / Development / Execution Instructions
 
 1) install python as appropriate for operating system
 2) install postgreSQL as appropriate for operating system
-2) install development environment as necessary or can use emacs 
-1) To install pip:
+    Database name can be changed but currently it is using FibRest_db
+    manager.py will deploy the DB schema:
+        1. python manager.py db init
+        2. python manager.py db Migrate
+        3. pythin manager.py db Upgrade
+3) install development environment as necessary or can use emacs 
+4) To install pip:
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-2) pip install Flask
-3) pip install Flask-API
-4) pip install Flask-Migrate
-5) pip install PostgreSQL
-6) pip install Psycopg2
-7) pip install Python-dotenv (Windows environments)
-8) pip install Virtualenv
-9) pip install Virtualenv
+5) pip install Flask
+6) pip install Flask-API
+7) pip install Flask-Migrate
+8) pip install PostgreSQL
+9) pip install Psycopg2
+10) pip install Python-dotenv (Windows environments)
+11) pip install Virtualenv
+12) pip install VirtualEnvWrapper-win
+
+To Execute: 
+1. configuration should be changed for production environment.  There are placeholders and config can be set programmatically.
+2. Code should be deployed on server
+3. Python run.py will run the web services
+
+To Unit Test:
+1. Python unit_tests.py
 
 
