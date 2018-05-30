@@ -1,0 +1,34 @@
+Author: Justin Russas
+Contact: jmrussas@gmail.com
+
+Requirements:
+
+1. Interface should be a "RESTful" web service
+2. web service accepts a number as input and rerturns that many numbers of the Fibonacci number sequence
+3. web service should reject non positive numbers
+4. Deployment instructions
+5. Include unit tests
+6. code must be able to be deployed and maintained for 5 years
+
+
+Assumptions:
+1. A zero value returns an empty sequence
+2. PUT verb not supported
+3. RESTful interface uses an underlying request object.
+    a. POST creates a request that can be retrieved by Include
+    b. DELETE removes request by Id
+    c. Get with no id provides a list of all records.
+    d. No pagination for get all
+    e. Get with an id retrieves a particular record
+4. Database backups would be handled as part of the postgres administration
+
+
+Potential issues:
+1. Processing for a large range could take longer than the request timeout
+    a. As part of future maintenance and work processing should be handled by a separate process
+    b. Sequence should be part of the get only.   It's currently being returned in the POST
+2. To be more of a REST interface it should be using the same request datamodel and submitting 
+    that as the data of the request with the correct verb.
+
+
+
