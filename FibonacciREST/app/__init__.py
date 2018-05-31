@@ -9,7 +9,6 @@ from math import sqrt
 #local import
 from instance.config import app_config
 
-
 db = SQLAlchemy()
 #using wolfram algorithm to compute value
 def ComputeFib(number):
@@ -34,8 +33,7 @@ def config_app(config_type):
     app.config.from_pyfile('config.py')
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     db.init_app(app)
-       
-       
+         
     @app.route('/FibNumberReqs/<int:id>', methods=['DELETE'])
     def parse_delete_request(id, **kwargs):
         if request.method == 'DELETE':
@@ -56,7 +54,6 @@ def config_app(config_type):
                 else: 
                     
                     num_sq = get_fib_sequence(number)
-                    #return(str(num_sq))
                     new_req = FibonacciNumbersRequest(fib_number_input = number)
                     
                     new_req.number_sequence = str(num_sq)
@@ -103,8 +100,7 @@ def config_app(config_type):
                     response = jsonify(cur_rec)
                     response.status_code = 200
                     return response
-                    #if verb == 'GET':
-                    #    return jsonify(obj)  
+
                 else:
                     #No record for this id
                     return ('', 204)
